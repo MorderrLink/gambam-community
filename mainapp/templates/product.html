@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="product-content">
+        <h1>{{ product.name }}</h1>
+        <img id="product-image" src="{{ product.imageURL }}" alt="">
+        <h4>Цена: {{ product.price }}руб.</h4>
+        <a href="{% url 'shop' %}" class="back-to-shop">Back to shop</a>
+    </div>
+    <br>
+{% endblock content %}

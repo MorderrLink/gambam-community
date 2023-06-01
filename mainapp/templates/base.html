@@ -1,0 +1,107 @@
+{% load socialaccount %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/galery.css' %}">
+    
+    
+
+    <title>GAMBAM</title>
+
+
+    <script>
+        var user = '{{ request.user }}'
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i=0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim()
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+    </script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="nav-container">
+        <a class="navbar  {% if 'blog' in request.resolver_match.url_name %} light-up {% endif %}" href="{% url 'blog' %}">Blog</a>
+        <a class="navbar  {% if 'shop' in request.resolver_match.url_name %} light-up {% endif %}" href="{% url 'shop' %}">Shop</a>
+        <a class="navbar-logo  {% if 'home' in request.resolver_match.url_name %} light-up {% endif %}" href="{% url 'home' %}" id="logo">GAMBAM</a>
+        <a class="navbar  {% if 'about' in request.resolver_match.url_name %} light-up {% endif %}" href="{% url 'about' %}">About</a>
+        <a class="navbar  {% if 'profile' in request.resolver_match.url_name %} light-up {% endif %}" href="{% url 'profile' %}">Profile</a>
+        
+        
+        <img class="hamburger" id="ham-img" src="\static\image\hamburger.png" alt="">
+        <div class="div-hamburger">
+            <a href="{% url 'blog' %}" class="hamb-item {% if 'blog' in request.resolver_match.url_name %} light-up {% endif %}">Blog</a>
+            <a href="{% url 'shop' %}" class="hamb-item {% if 'shop' in request.resolver_match.url_name %} light-up {% endif %}">Shop</a>
+            <a href="{% url 'about' %}" class="hamb-item {% if 'about' in request.resolver_match.url_name %} light-up {% endif %}">About</a>
+            <a href="{% url 'profile' %}" class="hamb-item {% if 'profile' in request.resolver_match.url_name %} light-up {% endif %}">Profile</a>
+            {% if user.is_superuser %}
+            <a href="{% url 'admin:index' %}" class="hamb-item">Admin</a>
+            {% endif %}
+        </div>
+        
+        {% if request.user.is_authenticated %}
+        <h3 class="navbar signup signed-in">Signed in <img class="tick" src="\static\image\check.png" alt=""></h3>
+        
+        {% else %}
+        <a class="navbar signup" href="{% url 'google_login' %}">Login with Google</a>
+        {% endif %}
+    <!--  -->
+
+
+
+    </div>
+    
+    
+
+
+    
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock content %}
+            <br><br><br><br><br><br><br><br><br>
+        </div>
+    
+
+    <!-- NAVBAR Script -->
+    <script>
+        var hamburgerBtn = document.querySelector(".hamburger")
+        hamburgerBtn.onclick = function() {
+            navBar = document.querySelector(".div-hamburger")
+            navBar.classList.toggle("opened")
+        
+        }
+    </script>
+    <script src="{% static '/js/cart.js' %}"></script>
+    <!--  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000
+      });
+    </script>
+</body>
+</html>

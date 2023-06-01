@@ -1,0 +1,113 @@
+
+.cart-layout {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+
+
+.orderitem {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    font-size: 2.5rem;
+    gap: 2rem;
+    border-radius: 1.05rem;
+    box-sizing: border-box;
+    border: solid .15rem rgba(0,0,0,.15);
+}
+
+#orderitem-img {
+    width: 200px;
+    height: 200px;
+}
+
+.orderitem-name, .price, .summ {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.change-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.chg-quantity {
+    width: 50px;
+    height: 50px;
+}
+
+.product-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.url-checkout {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(39, 39, 39);
+    background-color: #da93fb;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+}
+
+
+
+.checkout-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.scss {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(39, 39, 39);
+    background-color: #da93fb;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+}
+#p-checkout {
+    font-weight: 400;
+    font-size: 1.45rem;
+}
+
+
+
+@media only screen and (max-width:900px) {
+    #orderitem-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media only screen and (max-width:700px) {
+    #orderitem-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media only screen and (max-width:400px) {
+    #orderitem-img {
+        width: 100px;
+        height: 100px;
+    }
+    .summ {
+        display: none;
+    }
+    .cart-layout {
+        margin-left: -2rem;
+    }
+    .chg-quantity {
+        width: 35px;
+        height: 35px;
+    }
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content">
+        <div class="checkout-div">
+            <p id="p-checkout">Ура! Ваш заказ оформлен.</p>
+            <p id="p-checkout">В ближайшее время мы свяжемся с вами по почте</p>
+            <p id="p-checkout"> Спасибо, {{ user.username }}!</p>
+            <a class="scss" href="{% url 'shop' %}">В магазин</a>
+        </div>
+        
+    </div>
+{% endblock content %}
+
+    <!--  how to clear shopping cart in django -->

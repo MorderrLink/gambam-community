@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,200&display=swap');
+/* CARD LAYOUT STYLING */
+.card-deck {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card {
+    box-shadow: 0 35px 80px rgb(0, 0, 0, .15);
+    padding: .3rem;
+    border-radius: 1.25rem;
+    display: flex;
+    width: 300px;
+    height: 450px;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.card:hover {
+    scale: 1.05;
+    transform: translateY(1rem);
+    border: solid .1rem rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-img {
+    transform: translateY(-2.5rem);
+
+}
+
+.card:hover .card-content {
+    scale: 1.05;
+}
+/* CARDS RESPONSIVENESS */
+
+@media only screen and (max-width:900px) {
+    .card {
+        width:60%;
+    }
+    .poster {
+        height: 350px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width:700px) {
+    .card {
+        width:90%;
+    }
+    .poster {
+        height: 300px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width:400px) {
+    .card {
+        width:550px;
+    }
+    .poster {
+        height: 200px;
+        width: 100%;
+    }
+}
+
+
+/* CARD CHILDS STYLING */
+
+.card-img {
+    height: 65%;
+    width: 100%;
+    border-radius: 1.25rem;
+    transition: .3s;
+}
+
+#add-to-cart-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.card-title {
+    margin-left: 7px;
+    font-size: 1.25rem;
+    font-weight: 550;
+    height: min-content;
+    margin-top: -1px;
+}
+.card-text {
+    margin-left: 7px;
+    font-size: 1.15rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+}
+
+.btns-div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: .8rem;
+}
+
+
+.fwd-a {
+    display: flex;
+    font-size: 1.15rem;
+    margin-right: 1.5px;
+    padding: .45rem;
+    background-color: #da93fb;
+    text-decoration: none;  
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    color: black;
+    border-radius: 1rem;
+    transition: .2s;
+}
+.fwd-a:hover {
+    scale: 1.05;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0,0,0,.3);
+    
+}
+
+.add-to-cart {
+    padding: .25rem;
+    border: none;
+    background-color: #fee6fa;
+    border-radius: 1rem;
+    transition: .2s;
+}
+.add-to-cart:hover {
+    scale: 1.05;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+
+
+.back-to-shop {
+    text-decoration: none;
+}
+#product-image {
+    height: 750px;
+    width: 650px;
+}
+
+
+.cart-href {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    transition: ease-in-out .2s;
+}
+
+.cart-href:hover {
+    scale: 1.05;
+    transform: translateY(-2px);
+
+}
+
+.go-to-cart {
+    text-decoration: none;
+    color: #e678d1;
+    font-size: 2rem;
+    transition: ease-in-out .2s;
+}
+
+
+
+
+.cart-items {
+    background-color: #e678d1;
+    color: rgb(68, 68, 68);
+    font-size: 2rem;
+    border-radius: 50%;
+}

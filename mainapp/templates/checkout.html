@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="page-name">Checkout</div>
+    <div class="checkout-div">
+        <p id="p-checkout">После подтверждения, мы свяжемся с вами по поводу оплаты. В нашем магазине оплата производится переводом на карту.</p>
+        <a class="scss" href="{% url 'success' %}">Оформить заказ</a>
+    </div>
+
+    
+</div>    
+
+    
+    
+{% endblock content %}

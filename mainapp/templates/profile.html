@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+        <div class="page-name">Profile</div>
+
+        {% if request.user.is_authenticated %}
+        <div class="profile-content secondary-theme">
+            <img src="\static\image\user(1).png" class="user-icon" alt="">
+            <p id="username">Name: {{ request.user.username }}</p>
+            <a href="{% url 'account_logout' %}" class="logout accent-theme">Log out</a>
+        </div>    
+            
+
+        {% else %}
+        <div class="profile-content secondary-theme">
+            <div class="page-name">You need to log in to see BLOG and your PROFILE!</div>
+            <div class="log-in">
+                <a href="{% url 'google_login' %}">Log in with Google</a>
+            </div>
+            
+        </div>
+            
+        {% endif %}
+    </div>
+    
+
+{% endblock content %}

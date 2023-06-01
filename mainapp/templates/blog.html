@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content">
+        <div class="page-name">Blog</div>
+        <div class="blog-content">
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="msg" data-aos="fade-right">
+                        <h4 class="author">{{ message.author.username }}</h4>
+                        {% if message.imageURL %}
+                            <img id="msg-img" src="{{ message.imageURL }}" alt="">
+                        {% else %}
+                            
+                        {% endif %}
+                        <div class="for-text">
+                            <p class="text">- {{ message.text }}</p>
+                        </div>
+                        <p class="date">{{ message.date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if user.is_superuser %}
+            <div class="input">
+                <form class="type" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input id="submit-send" type="submit" value="✉">
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+
+{% endblock content %}

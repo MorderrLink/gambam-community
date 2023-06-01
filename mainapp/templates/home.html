@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="content">
+        <div class="page-name">
+
+        </div>
+        <div class="home-content  secondary-theme">
+            <!--------------------------------------------------------------------------------------->
+            <div class="intro">
+                <div class="intro-logo-text"> <h1>ᛚᚤᛖᎶᚤᛖ</h1> </div>
+                
+                <img class="intro-image" src="{% static 'image/image.svg' %}" alt="">
+                hold a pic!
+            </div>
+                
+            <!---------------------------------------------------------------------------------->
+            <div class="link-cards">
+                <div data-aos="fade-right" data-aos-duration="1300" class="link-card">
+                    <img src="{% static 'image/info.png' %}" alt="">
+                    <h5>About</h5>
+                    <p>Что за ГАМБАМ? Чее</p>
+                    <a href="{% url 'about' %}">Go -></a>
+                </div>
+                <div data-aos="fade-right" data-aos-duration="1700" class="link-card">
+                    <img src="{% static 'image/shopping-bag.png' %}" alt="">
+                    <h5>Shop</h5>
+                    <p>Магазин? Ну да... В нём что-нибудь купить можно</p>
+                    <a href="{% url 'shop' %}">Go -></a>
+                </div>
+                <div data-aos="fade-right" data-aos-duration="2000" class="link-card">
+                    <img src="{% static 'image/blog.png' %}" alt="">
+                    <h5>Blog</h5>
+                    <p>Эхх, что пишут сегодня не поверишь</p>
+                    <a href="{% url 'blog' %}">Go -></a>
+                </div>
+
+            </div>
+
+            <!--------------------------------------------------------------------------------------------------------->
+            <div class="posters">
+                <a data-aos="zoom-in-down" class="poster" href="{% url 'home' %}"><img src="{% static '/image/gambam_1.png' %}" alt=""></a>
+                <a data-aos="zoom-in-down" class="poster" href="{% url 'home' %}"><img src="{% static '/image/gambam_2.jpg' %}" alt=""></a>
+                <a data-aos="zoom-in-down" class="poster" href="{% url 'home' %}"><img src="{% static '/image/gambam_3.png' %}" alt=""></a>
+                <a data-aos="zoom-in-down" class="poster" href="{% url 'home' %}"><img src="{% static '/image/gambam_4.png' %}" alt=""></a>
+            </div>
+        </div>
+
+        
+    </div>
+
+{% endblock %}

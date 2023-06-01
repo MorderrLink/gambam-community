@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="content">
+        <div class="page-name">Cart</div>
+        
+        <!-- Заголовок корзины -->
+        <!-- <div class="example">
+            <h2 class="ex-name">Название</h2>
+            <h1>Изображение</h1>
+            <div class="quantity-block">
+                <div class="ex-quantity">
+                    <p class="quantity-p">Кол-во</p>
+                </div>
+                <div class="change-quantity">
+                    <img data-product={{item.product.id}} id="chg-quantity" data-action="add" class="chg-quantity update-cart" src="\static\image\arrow-up.png" alt="+">
+                    <img data-product={{item.product.id}} id="chg-quantity" data-action="remove" class="chg-quantity update-cart" src="\static\image\down-arrow.png" alt="-">
+                </div>
+            </div>
+
+            <p class="ex-price">Цена</p>
+            <p class="ex-summ">Стоимость</p>
+        </div> -->
+        <!--                    -->
+        <div class="cart-layout">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th class="summ">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <div class="product-img">
+                                <img src="{{ item.product.imageURL }}" id="orderitem-img" alt="">
+                            </div>
+                        </td>
+                        <td><h4 class="orderitem-name">{{ item.product.name }}</h4></td>
+                        <td>
+                            <div class="quantity-block">
+                                <div class="change-quantity">
+                                    <img data-product={{item.product.id}} id="chg-quantity" data-action="add" class="chg-quantity update-cart" src="{% static 'image/plus.png' %}" alt="+">
+                                    <p class="quantity-p">{{item.quantity}}</p>
+                                    <img data-product={{item.product.id}} id="chg-quantity" data-action="remove" class="chg-quantity update-cart" src="{% static 'image/minus.png' %}" alt="-">
+                                </div>
+                            </div>
+                        </td>
+                        <td><p class="price">{{ item.product.price }} руб./шт.</p></td>
+                        <td><p class="summ">{{ item.get_total }} руб.</p></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- {% for item in items %}
+            <div class="orderitem">
+                <h4 class="orderitem-name">{{ item.product.name }}</h4>
+                
+                <div class="quantity-block">
+                    <div class="change-quantity">
+                        <img data-product={{item.product.id}} id="chg-quantity" data-action="add" class="chg-quantity update-cart" src="{% static 'image/plus.png' %}" alt="+">
+                        <p class="quantity-p">{{item.quantity}}</p>
+                        <img data-product={{item.product.id}} id="chg-quantity" data-action="remove" class="chg-quantity update-cart" src="{% static 'image/minus.png' %}" alt="-">
+                    </div>
+                </div>
+
+                <p class="price">{{ item.product.price }} руб./шт.</p>
+                <p class="summ">{{ item.get_total }} руб.</p>
+
+            </div>
+            
+            {% endfor %} -->
+            <p>Всего товаров: {{order.get_cart_items}} шт.</p>
+            <p>Стоимость покупки: {{order.get_cart_total}} руб.</p>
+            <a class="url-checkout" href="{% url 'checkout' %}">Оформление заказа</a>
+        </div>
+        
+    </div>
+{% endblock content %}

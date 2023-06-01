@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="page-name premium-name"><h1>Galery</h1></div>
+    <div class="galery-content">
+        {% for picture in pictures %}
+            <a href="{{ picture.imageURL }}"><img id="picture" src="{{ picture.imageURL }}" alt=""></a>
+            
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="flex-direction: column;">
+    <p>Are you sure you wnat to log out?</p>
+<div class="logg">
+    <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <a id="back" class="accent-theme" href="{% url 'profile' %}">Back</a>
+        <button id="lgout-submit" class="accent-theme" type="submit">Log Out</button>
+      </form>
+</div>
+</div>
+
+
+
+{% endblock %}

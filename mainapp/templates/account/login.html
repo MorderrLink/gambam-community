@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="login-content">
+        <h1>Log in with Google</h1>
+        <a class="ggl" href="{% url 'google_login' %}">Google</a>
+    </div>
+</div>
+{% endblock content %}

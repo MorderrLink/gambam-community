@@ -1,0 +1,157 @@
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+
+
+.description {
+    background-color: #fcd9f6;
+    display: flex;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+}
+
+.bk1luv {
+    background-color: #fcd9f6;
+    display: flex;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+}
+
+.severn1y {
+    background-color: #fcd9f6;
+    display: flex;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+}
+
+.majorgambam {
+    background-color: #fcd9f6;
+    display: flex;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+}
+
+
+#about-person-img {
+    border-radius: 1.15rem;
+    width: 400px;
+    height: 400px;
+    margin: 2px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.15);
+}
+
+
+
+.about-person-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: calc(100% - 900px);
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+.about-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #da93fbc4;
+    border-radius: 1.25rem;
+    margin-top: 1rem;
+    padding: 1.75rem;
+    text-align: center;
+
+}
+.about-info h3 {
+    font-weight: 400;
+}
+
+
+
+.mksmtsv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.mksmtsv h3 {
+    padding-bottom: .5rem;
+    border-bottom: solid .2rem #fb93e8;
+}
+
+.mksmtsv-card {
+    background-color: #969696;
+    display: flex;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 5px 5px 20px #da93fbc4, -5px -5px 20px #da93fbc4;
+}
+
+
+
+
+.main-theme {
+    background-color: #da93fbc4;
+}
+/* #ff9355 */
+.secondary-theme {
+    background-color: #fcd9f6;
+}
+/* #fcf2b1 */
+.accent-theme {
+    color: #fb93e8;
+}
+
+/* #b09a07 */
+
+
+@media only screen and (max-width: 1000px) {
+    .description {
+        flex-direction: column;
+    }
+    #about-person-img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .mksmtsv-card {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .description {
+        flex-direction: column;
+    }
+    #about-person-img {
+        width: 250px;
+        height: 300px;
+    }
+    
+    .mksmtsv-card {
+        flex-direction: column;
+    }
+    .about-person-text {
+        padding: .3rem;
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content">
+        <div class="page-name">Shop</div>
+        <h1 class="warning hidden">You need to log in to use cart!</h1>
+        <div class="cart-href">
+            <a class="go-to-cart accent-theme" href="{% url 'cart' %}">Go to Cart!</a>
+            <h1 class="cart-items accent-theme"> &nbsp;{{ cartItems }}&nbsp;</h1>
+        </div>
+
+        <div class="card-deck">
+            {% if messages != 0 %}
+                {% for product in products %}
+                
+                <div class="card" data-aos="zoom-in-right" data-aos-delay="50">
+                    <img class="card-img" src="{{ product.imageURL }}" alt="">
+                    
+                    <div class="card-content">
+                        <h4 class="card-title"><span>{{ product.name }}</span></h4>
+                        <p class="card-text">Цена: {{ product.price }} руб.</p>
+                        <div class="btns-div">
+                            <a href="{% url 'product' product_id=product.id slug=product.slug %}" class="fwd-a main-theme">Посмотреть</a>
+                            <button class="update-cart add-to-cart secondary-theme" data-action="add" data-product="{{ product.id }}">&nbsp; <img id="add-to-cart-img" src="{% static 'image\add-to-cart.png' %}" alt=""> &nbsp;</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h1>No products are availible at the moment 😥</h1>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
