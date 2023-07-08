@@ -40,6 +40,18 @@
             return cookieValue;
         }
         var csrftoken = getCookie('csrftoken');
+
+
+        fetch("http://ip-api.com/json/?fields=61439")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res)
+                let ipEl = res.query
+                console.log(ipEl)
+                localStorage.setItem("userIp", ipEl)    
+                
+            });
+        
     </script>
 </head>
 <body>

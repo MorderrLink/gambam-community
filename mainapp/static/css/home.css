@@ -7,7 +7,14 @@
 
 }
 
+#gmbm {
+    background-clip: unset;
+    background: linear-gradient(90deg, #f67e9c, #3e1da2);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
 
+}
 
 .intro {
     min-height: 600px;
@@ -100,7 +107,7 @@
 .link-card img {
     width: 300px;
     height: 300px;
-    transition: 800ms;
+    transition: 800ms;  
 }
 .link-card img::before, .link-card img:active {
     transform:  rotateY(180deg);
