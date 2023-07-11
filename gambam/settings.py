@@ -136,15 +136,12 @@ WSGI_APPLICATION = "gambam.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gambamdb',
-        'USER': 'xXop',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'gambamDB',
+        'USER': 'postgres',
         'PASSWORD': 'Patronus2006()',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'PORT': '5432'
     }
 }
 
